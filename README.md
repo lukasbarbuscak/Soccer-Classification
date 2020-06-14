@@ -18,5 +18,44 @@ Both boxplots show the free agents were not outliers. I set the numbers of these
 
 Before building models, I looked at the data using EDA and tried to make predictions about the relationships between the variables. First, I checked if there were any differences between players playing at different positions. I visualized the differences:
 
+<br>
 
+![height_weight](https://github.com/lukasbarbuscak/Soccer-Classification/blob/master/images/height_weight.PNG)
 
+<br>
+
+![value_wage](https://github.com/lukasbarbuscak/Soccer-Classification/blob/master/images/value_wage.PNG)
+
+<br>
+
+![foot_skill](https://github.com/lukasbarbuscak/Soccer-Classification/blob/master/images/foot_skill.PNG)
+
+Both weight and height followed a similar pattern, with goalkeepers, central defenders, and strikers being the tallest, and heaviest, and left/right midfielders, wingers and attacking midfielders the opposite. Similarly to height and weight, more expensive players tended to have higher wages. The most expensive players making the most were generally centre-forwards and wingers, and the least expensive making the least were generally left/right defenders and goalkeepers. Players with a high rating of their weak foot (it is a likert scale from 1 to 5) generally tended to be centre-forwards, wingers, left/right midfielders, and central attacking midfielders. On the other hand, low rating weak-footers generally were left/central defenders, and goalkeepers. When it comes to players' skill moves, centre-forwards and left wingers tended to have the best average rating, with central defenders and goalkeepers having the lowest average ratings.
+
+For the analysis of the particular playing attributes, it was easier to first group the abilities and find their mean by their general categories:
+- attacking
+- skill
+- movement
+- power
+- mentality
+- defending
+- goalkeeping
+- overall skill
+
+It was no surprise to see that in general, means for attacking attributes were higher for attacking players (forwards, wingers), defending attributes were higher for defenders, and goalkeeping attributes were higher for goalkeepers. Let's look at attribute groups which were less obvious.
+
+<br>
+
+![attributes](https://github.com/lukasbarbuscak/Soccer-Classification/blob/master/images/attributes.PNG)
+
+Generally, goalkeepers and central defenders had lower mean than other positions in all attribute groups. On the opposite side of the spectrum, the results were mixed:
+- skill: the players with the highest mean in the skill group were centre-forwards, attacking midfielders, and central midfielders
+- movement: the players with the highest mean in the movement group were left/right midfielders and wingers, and centre-forwards
+- power: the players with the highest mean in the power group were strikers, defensive midfielders, and centre-forwards
+- mentality: the highest mean was registered by defensive midfielders and central midfielders
+
+I then got curious about the average of all attributes: I called it an "overall":
+
+![overall](https://github.com/lukasbarbuscak/Soccer-Classification/blob/master/images/overall.PNG)
+
+Players who had high average through all abilities generally tended to be central and defensive midfielders, and left and right defenders. On the other hand, strikers, central defenders, and goalkeepers had lower average than other positions.
