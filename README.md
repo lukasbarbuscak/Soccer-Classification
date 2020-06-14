@@ -56,6 +56,4 @@ Generally, goalkeepers and central defenders had lower mean than other positions
 
 I then got curious about the average of all attributes: I called it an "overall":
 
-![overall](https://github.com/lukasbarbuscak/Soccer-Classification/blob/master/images/overall.PNG)
-
 Players who had high average through all abilities generally tended to be central and defensive midfielders, and left and right defenders. On the other hand, strikers, central defenders, and goalkeepers had lower average than other positions.
