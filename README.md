@@ -73,6 +73,9 @@ From the EDA, we can say that on average, comparing to other positions on the pi
 
 ## Modeling
 
+Unfortunately, this dataset was imbalanced, which meant that for some positions the sample was very small comparing to other positions. I split my dataset into train and test. I used the SMOTE technique to upsample my train dataset to better train my model. 
+
+
 
 
 
