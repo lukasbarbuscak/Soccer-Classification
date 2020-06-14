@@ -73,9 +73,52 @@ From the EDA, we can say that on average, comparing to other positions on the pi
 
 ## Modeling
 
-Unfortunately, this dataset was imbalanced, which meant that for some positions the sample was very small comparing to other positions. I split my dataset into train and test. I used the SMOTE technique to upsample my train dataset to better train my model. 
+Unfortunately, this dataset was imbalanced, which meant that for some positions the sample was very small comparing to other positions. I split my dataset into train and test. I used the SMOTE technique to upsample my train dataset to better train my model.
 
+<br>
 
+![smote](https://github.com/lukasbarbuscak/Soccer-Classification/blob/master/images/smote.PNG)
 
+As we can see, SMOTE increased the number of observations by creating synthetic ones based on nearest neighbours.
 
+The metric I have chosen for measuring the accuracy of the classification model is the accuracy score. In other words, the score will tell me the percentage the model attributed the correct class to an observation (in this case, whether the model predicted the correct posittion of a player). As my baseline model, I used a dummy clasifier returning predictions by following the training set’s class distribution. The accuracy score was around 6.8%.
 
+I chose three models that had a potential to improve this accuracy score:
+- Decision Tree: this simple algorithm is ideal for multiclass prediction
+- Random Forest: essentially creates multiple trees, and averages their results
+- Gradient Boosting: weak learners improve performance gradually, and the key is the optimization of a loss function, allowing for the model to improve
+
+I have summarized the results in the following table:
+| Model  | MSE |
+| ------------- | ------------- |
+| Baseline  | 6.84%  |
+| Decision Tree  | 60.04%  |
+| Random Forest  | 72.10%  |
+| Gradient Boosting  | 72.54%  |
+
+After a bit of hyperparameter tuning, both gradient boosting and random forest performed approximately the same, with gradient boosting performing a bit better on the test data.
+
+I saved the model, its predictions, and I analyzed which features were the most important: skill moves rating, left footedness, and abilities being some of the most important in the model.
+
+<br>
+
+![importances](https://github.com/lukasbarbuscak/Soccer-Classification/blob/master/images/importances.PNG)
+
+## Discussion
+
+To better understand the where the model performed well and where it made mistakes, I plotted a confusion matrix as a heatmap. I used percentages supplementary to counts, since absolute values were not necessarily the best measure because of the imbalanced test dataset.
+
+<br>
+
+![confusion](https://github.com/lukasbarbuscak/Soccer-Classification/blob/master/images/confusion.PNG)
+
+While the predicted values of some positions matched their true values very well (goalkeeper, left/right/central defender, striker), other predicted values did not match the true values at all. I analyzed why that might have been the case:
+- a lot of positions share the same area of the pitch, and therefore their attributes might be very similar: for instance, centre-forwards and strikers, or right/left defenders and right/left wing-backs
+- in case of left/right midfielders/wingers, in addition to operating in the same areas of the pitch, their roles are mirrored, and what side of the pitch they play depends on the instructions, and their role: for instance, a player can be a winger or an inside forward, depending on which foot they prefer to use
+- some positions on the pitch are not much about the positions, but also specific roles: for example, attacking midfielders can often free-roam around the attacking areas of the pitch, therefore they share common traits with wingers, or strikers
+
+## Conclusion
+
+To sum up, I have developed a model that is predicting soccer players' position based on their ability scores, financial information, and other features. After performing the exploratory data analysis, I fitted three models and compared their accuracy scores, comparing how well the models performed comparing to the baseline model, and also each other. The model performing the best was the gradient boosting model. I saved the model and saved the results of the prediction in a csv file. I also included the analysis of feature importances, and saved it in a separate file. Finally, I analyzed the accuracy of the model using a confusion matrix.
+
+Future iterations of this type of analysis might consider analyzing general roles of players (for instance, based on the same instructions for multiple positions, such as right midfielder/winger, or centre-forward/striker). As mentioned in the discussion section, some positions are just too similar to each other, and the features used in the model alone are not able to distinguish between them accurately and consistently enough.
