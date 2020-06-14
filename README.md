@@ -56,4 +56,23 @@ Generally, goalkeepers and central defenders had lower mean than other positions
 
 I then got curious about the average of all attributes: I called it an "overall":
 
+<br>
+
+![overalll](https://github.com/lukasbarbuscak/Soccer-Classification/blob/master/images/overalll.PNG)
+
 Players who had high average through all abilities generally tended to be central and defensive midfielders, and left and right defenders. On the other hand, strikers, central defenders, and goalkeepers had lower average than other positions.
+
+I then moved on to analyzing the categorical variables. I looked at the most worn number by each position (which generally follow the conventions), most frequent nationality by position, and found that most players are right-footed, have a normal body type, and have medium attacking and defensive workrate.
+
+### EDA Summary
+
+From the EDA, we can say that on average, comparing to other positions on the pitch:
+- attacking players are shorter and lighter (with the exception of strikers), have higher wages and higher value, have better weak foot and better skill moves, possess better movement skills and tend to wear numbers 7, 9, 10, 11
+- defensive players tend to be taller and heavier, have lower wages and lower market value, have better defending skills, possess worse weak foot and worse skill moves, and tend to wear numbers 2, 3, 4
+- central players have stronger mentality, have higher level of all skills on average, wear numbers 6, 8, and tend to be from Germany and England
+
+## Modeling
+
+
+
+
